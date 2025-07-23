@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="assets/style.css">
 
     <!-- DM Sans Font -->
@@ -15,18 +15,28 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">Profile</a></li>
-                <li><a href="#testi">Testimonial</a></li>
-            </ul>
-        </nav>
-            
-        <div id="contactBtn">
-            <a href="#contact">Contact</a>
-            <img src="./assets/icon/contact.svg" alt="Contact Icon"/>
-        </div>   
+        <div class="header-center">
+            <nav id="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">Profile</a></li>
+                    <li><a href="#testi">Testimonial</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-right">
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+                
+            <div id="contactBtn">
+                <a href="#contact">Contact</a>
+                <img src="./assets/icon/contact.svg" alt="Contact Icon"/>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -37,9 +47,9 @@
                 <h4>From Basic to Fluent - Your English Journey Starts at Bita Course</h4>
             </div>
 
-            <div class="right-home">
-                <img src="assets/icon/Right-Blob.svg" alt="">
-            </div>
+        <div class="right-home">
+            <img src="assets/icon/Right-Blob.svg" alt="Decorative blob shape">
+        </div>
         </section>
 
         <section class="profile">

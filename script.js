@@ -1,3 +1,21 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const nav = document.getElementById('nav');
+    
+    mobileMenuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
+    });
+    
+    const navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            nav.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+        });
+    });
+});
+
 function sendToWhatsApp() {
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;

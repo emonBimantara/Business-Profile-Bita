@@ -6,23 +6,79 @@
     scroll-behavior: smooth;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
 /* Header */
 
 header{
     display: flex; 
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 
     padding: 1em 5em;
     font-size: 1.2rem;
 
     background-color: rgba(242, 106, 141);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-center {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
 }
 
 header nav ul{
     display: flex;
     gap: 5em;
     list-style: none;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5em;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 a{
@@ -36,17 +92,27 @@ a{
     border-radius: 40px;
 
     display: flex;
+    align-items: center;
     gap: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 #contactBtn a{
     color: black;
 }
 
+#contactBtn img {
+    width: 20px;
+    height: 20px;
+}
+
 /* Main Section */
 
 main{
     background-color: #FFFDF6;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* Home */
@@ -58,18 +124,22 @@ main{
 
     display: flex;
     justify-content: space-between;
-    height: 85vh;
+    align-items: center;
+    min-height: 85vh;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 .left-home{
     color: white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
-    width: 40%;
+    width: 50%;
 
     margin-left: 2em;
-    margin-top: 10em;
 }
 
 .left-home h3{
@@ -88,9 +158,28 @@ main{
     font-size: 25px;
 }
 
+.right-home {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    position: relative;
+    left: 2em;
+}
+
 .right-home img{
     height: 85vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
+
+.right-home svg {
+    height: 85vh;
+    width: auto;
+    max-width: 100%;
+}
+
 
 /* Profile Section */
 
@@ -307,4 +396,431 @@ main{
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+    border: none;
+}
+
+/* Responsive Design */
+
+
+/* Medium Desktop Screens */
+@media (min-width: 1200px) and (max-width: 1919px) {
+    header {
+        padding: 1em 6em;
+    }
+    
+    .left-home {
+        margin-left: 3em;
+    }
+    
+    .left-top-profile {
+        margin-left: 3em;
+    }
+    
+    .right-bottom-profile {
+        margin-left: 3em;
+    }
+    
+    .card-container {
+        padding: 2em 6em;
+    }
+}
+
+/* Small Desktop/Laptop Screens */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    header {
+        padding: 1em 4em;
+    }
+    
+    .left-home {
+        margin-left: 2em;
+    }
+    
+    .left-home h1 {
+        font-size: 5rem;
+    }
+    
+    .left-home h3 {
+        font-size: 2.5rem;
+    }
+    
+    .left-top-profile {
+        margin-left: 2em;
+    }
+    
+    .left-top-profile p {
+        font-size: 1.8rem;
+    }
+    
+    .right-bottom-profile {
+        margin-left: 2em;
+    }
+    
+    .right-bottom-profile p {
+        font-size: 1.8rem;
+    }
+
+    .testi-video img{
+        width: 80%;
+    }
+    
+    .card-container {
+        padding: 2em 4em;
+    }
+    
+    .top .cta-btn {
+        width: 25%;
+    }
+}
+
+/* Tablet Landscape */
+@media (min-width: 769px) and (max-width: 1023px) {
+    header {
+        padding: 1em 3em;
+    }
+    
+    .left-home {
+        margin-left: 1.5em;
+    }
+    
+    .left-home h1 {
+        font-size: 4.5rem;
+    }
+    
+    .left-home h3 {
+        font-size: 2.2rem;
+    }
+    
+    .left-top-profile {
+        margin-left: 1.5em;
+    }
+    
+    .left-top-profile p {
+        font-size: 1.6rem;
+        width: 100%;
+    }
+    
+    .right-bottom-profile {
+        margin-left: 1.5em;
+    }
+    
+    .right-bottom-profile p {
+        font-size: 1.6rem;
+        width: 100%;
+    }
+
+    .right-top-profile,
+    .left-bottom-profile{
+        display: none;
+    }
+    
+    .testi-video img{
+        width: 80%;
+    }
+
+    .card-container {
+        padding: 2em 3em;
+    }
+    
+    .top .cta-btn {
+        width: 30%;
+    }
+    
+    .contact-form input {
+        width: 50%;
+    }
+}
+
+/* Tablet Portrait */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 1em 2em;
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .header-left {
+        order: 1;
+    }
+
+    .header-center {
+        order: 3;
+        width: 100%;
+        flex: none;
+    }
+
+    .header-right {
+        order: 2;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    #contactBtn {
+        display: none;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header nav.active {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 1em;
+        text-align: center;
+        background-color: rgba(242, 106, 141, 0.95);
+        padding: 1em;
+        border-radius: 10px;
+        margin: 1em 0;
+    }
+
+    .home {
+        flex-direction: column;
+        height: auto;
+        padding: 2em 1em;
+        text-align: center;
+    }
+
+    .left-home {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        margin-bottom: 2em;
+        position: relative;
+        top: 5em;
+    }
+
+    .left-home h1 {
+        font-size: 4rem;
+    }
+
+    .left-home h3 {
+        font-size: 2rem;
+    }
+
+    .left-home h4 {
+        font-size: 1.5rem;
+    }
+
+    .right-home img {
+        display: none;
+    }
+
+    .top-profile,
+    .bottom-profile {
+        flex-direction: column;
+        gap: 2em;
+        margin: 2em 0;
+    }
+
+    .left-top-profile,
+    .right-bottom-profile {
+        width: 80%;
+        margin: 0;
+        text-align: center;
+    }
+    
+
+    .left-top-profile p,
+    .right-bottom-profile p {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .right-bottom-profile p{
+        margin-top: 1em;
+    }
+
+    .right-top-profile,
+    .left-bottom-profile{
+        display: none;
+    }
+
+    .whyBita {
+        margin: 1em;
+        padding: 20px;
+    }
+
+    .whyBita .top {
+        text-align: center;
+    }
+
+    .top .cta-btn {
+        width: 60%;
+        font-size: 1.2rem;
+    }
+
+    .top h3 {
+        font-size: 2rem;
+    }
+
+    .top h6 {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .testi-video img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .about {
+        flex-direction: column;
+        gap: 2em;
+        margin: 2em 1em;
+    }
+
+    .right-about {
+        width: 100%;
+        text-align: center;
+    }
+
+    .right-about h1 {
+        font-size: 2rem;
+    }
+
+    .left-about img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .testi-desc {
+        font-size: 1.5rem;
+        margin: 1em;
+    }
+
+    .card-container {
+        flex-direction: column;
+        gap: 2em;
+        padding: 2em 1em;
+    }
+
+    .card {
+        padding: 30px;
+        margin: 0;
+    }
+
+    .left-card > .card,
+    .right-card > .card {
+        margin: 0 0 2em 0;
+    }
+
+    .card > h3 {
+        font-size: 1.5rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    .contact > h1 {
+        font-size: 2rem;
+        margin: 0 1em;
+    }
+
+    .contact-form input {
+        width: 80%;
+        margin-bottom: 1em;
+    }
+
+    .email-btn button {
+        padding: 1em 3em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1em;
+    }
+
+    .left-home h1 {
+        font-size: 3rem;
+        letter-spacing: 3px;
+    }
+
+    .left-home h3 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .left-home h4 {
+        font-size: 1.2rem;
+    }
+
+    .left-top-profile p{
+        font-size: 1.2rem;
+        position: relative;
+        top: 17em;
+        color: white;
+    }
+    
+    .right-bottom-profile p {
+        font-size: 1.2rem;
+        position: relative;
+        bottom: 19em;
+        color: white;
+    }
+
+    .top .cta-btn {
+        width: 70%;
+        font-size: 1rem;
+    }
+
+    .top h3 {
+        font-size: 1.5rem;
+    }
+
+    .top h6 {
+        width: 95%;
+        font-size: 0.9rem;
+    }
+
+    .right-about h1 {
+        font-size: 1.5rem;
+    }
+
+    .right-about h4 {
+        font-size: 1.2rem;
+    }
+
+    .right-about p {
+        font-size: 0.9rem;
+    }
+
+    .testi-desc {
+        font-size: 1.2rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card > h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .contact > h1 {
+        font-size: 1.5rem;
+    }
+
+    .contact-form input {
+        width: 90%;
+    }
+
+    .email-btn button {
+        padding: 1em 2em;
+        font-size: 0.9rem;
+    }
 }
